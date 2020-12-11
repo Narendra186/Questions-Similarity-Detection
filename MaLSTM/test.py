@@ -108,17 +108,17 @@ def preprocess(corpus, keep_list, cleaning = True, stemming = False, stem_type =
     else :
         corpus = [[x for x in x.split()] for x in corpus]
     
-    if lemmatization == True:
-        lem = WordNetLemmatizer()
-        corpus = [[lem.lemmatize(x, pos = 'v') for x in x] for x in corpus]
+    # if lemmatization == True:
+    #     lem = WordNetLemmatizer()
+    #     corpus = [[lem.lemmatize(x, pos = 'v') for x in x] for x in corpus]
     
-    if stemming == True:
-        if stem_type == 'snowball':
-            stemmer = SnowballStemmer(language = 'english')
-            corpus = [[stemmer.stem(x) for x in x] for x in corpus]
-        else :
-            stemmer = PorterStemmer()
-            corpus = [[stemmer.stem(x) for x in x] for x in corpus]
+    # if stemming == True:
+    #     if stem_type == 'snowball':
+    #         stemmer = SnowballStemmer(language = 'english')
+    #         corpus = [[stemmer.stem(x) for x in x] for x in corpus]
+    #     else :
+    #         stemmer = PorterStemmer()
+    #         corpus = [[stemmer.stem(x) for x in x] for x in corpus]
     
         
     return corpus
@@ -151,7 +151,7 @@ def main(q1,q2):
     #print("\n Text pre-processing done")
 
     # Loading pre-trained word vectors
-    EMBEDDING_FILE = 'GoogleNews-vectors-negative300.bin'
+    EMBEDDING_FILE = 'https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz'
     word2vec_model = gensim.models.KeyedVectors.load_word2vec_format(EMBEDDING_FILE, binary = True)
     w2v = dict(zip(word2vec_model.wv.index2word, word2vec_model.wv.syn0))
     
