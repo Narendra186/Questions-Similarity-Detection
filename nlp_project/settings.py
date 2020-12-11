@@ -28,7 +28,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 DEBUG = True
 
 # ALLOWED_HOSTS = ['127.0.0.1','duplicate-questions-detection.herokuapp.com']
-ALLOWED_HOSTS = ['duplicate-questions-detection.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','duplicate-questions-detection.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [

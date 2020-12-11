@@ -23,4 +23,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.type_questions,name="type_questions"),
+    path('check', views.check, name='check'),
 ]
