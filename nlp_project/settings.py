@@ -25,10 +25,9 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 SECRET_KEY = 'j*shp#o)jsl$!9))b0q(xv+k$pzz28+nx-g*gb*%hsh_hc!@mm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','duplicate-questions-detection.herokuapp.com']
-
 
 # Application definition
 
