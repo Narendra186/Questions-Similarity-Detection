@@ -1,8 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import cv2
-import subprocess
-import os
 from django.core.files.storage import FileSystemStorage
 
 def type_questions(request):
