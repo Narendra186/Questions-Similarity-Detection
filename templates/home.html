@@ -1,0 +1,81 @@
+{% load static %}
+<html>
+    <head>
+         <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </head>
+    <body>        
+        <nav class="nav-bar">
+        <div class="nav-wrapper" style="padding-left: 1%;">
+            <ul id="nav-mobile" class="left">
+                <li><a href="" style="font-size: 30;">FA</a></li>
+                <li><a href="" style="font-size: 30;">Actions</a></li>
+            </ul>
+        </div>
+        </nav>
+        <div class="main-content">
+            <div>
+                <blockquote style="font-size: 24;">
+                    Recognize the egocentric action in the video using our API
+                </blockquote>
+            </div>
+            <div style="font-size: 16;">
+                <ol>
+                    <li>Upload a video which is in first person perspective.</li>
+                    <li>Find out the action present.</li>
+                    <li>If prediction is wrong, help us increase our dataset by sharing the video and action present in it.</li>
+                </ol>
+            </div>
+            <div class="container">
+            <div class="row">
+                <div class="col s6 offset-s3">
+              <form action="#" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="file-field input-field">
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <textarea id="Question1" name="q1" class="materialize-textarea"></textarea>
+                              <label for="Question1">Question 1</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <textarea id="Question2" name="q2" class="materialize-textarea"></textarea>
+                              <label for="Question2">Question 2</label>
+                            </div>
+                          </div>
+                          <button class="btn waves-effect waves-light" style="margin-left: 100px;" type="submit" name="action">Submit
+                        </button>            
+      
+                </div>
+              </form>
+            </div>
+            </div>
+        </div>
+        </div>
+        <footer class="page-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Footer Content</h5>
+                  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Links</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+              
+    </body>
+</html>
+        
