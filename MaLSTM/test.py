@@ -138,6 +138,7 @@ def exponent_neg_manhattan_distance(left, right):
 
 # Based on the training set, a keep list of common dot words was prepared
 def main(q1,q2):
+    print("in main")
     common_dot_words = ['u.s.', 'b.tech', 'm.tech', 'st.', 'e.g.', 'rs.', 'vs.', 'mr.',
                         'dr.', 'u.s', 'i.e.', 'node.js']
 
@@ -149,7 +150,7 @@ def main(q1,q2):
     q2 = [qs[1]]
 
     #print("\n Text pre-processing done")
-
+    print("above embed")
     # Loading pre-trained word vectors
     EMBEDDING_FILE = 'https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz'
     word2vec_model = gensim.models.KeyedVectors.load_word2vec_format(EMBEDDING_FILE, binary = True)
@@ -157,6 +158,7 @@ def main(q1,q2):
     
     #print("\n Pre-trained word vectors loaded")
 
+    print("below embed")
 
     # Prepare word-to-index mapping
     vocabulary = dict()
@@ -255,7 +257,7 @@ def main(q1,q2):
     pred = model.predict([X_test['left'], X_test['right']])
 
     print("\n")
-
+    print('result','result',pred)
     if pred>0.5:
         return 1
     else :

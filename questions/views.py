@@ -11,5 +11,6 @@ def check(request):
         q2 = request.POST['q2']
         result = None
         if q1 and q2:
+            print('here')
             result = test.main(q1,q2)
     return render(request,'result.html',{"similar":result})
