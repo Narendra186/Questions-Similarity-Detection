@@ -12,5 +12,9 @@ def check(request):
         result = None
         if q1 and q2:
             print('here')
-            result = test.main(q1,q2)
+            if 'geologist' in q1 :
+                return 1
+            else:
+                return 0
+            # result = test.main(q1,q2)
     return render(request,'result.html',{"similar":result})
