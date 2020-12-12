@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
-from MaLSTM import test
+# from MaLSTM import test
 def type_questions(request):
     return render(request,"home.html")
 
@@ -13,8 +13,8 @@ def check(request):
         if q1 and q2:
             print('here')
             if 'geologist' in q1 :
-                return 1
+                result = 1
             else:
-                return 0
+                result = 0
             # result = test.main(q1,q2)
     return render(request,'result.html',{"similar":result})
