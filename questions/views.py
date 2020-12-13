@@ -12,7 +12,6 @@ def check(request):
         q2 = request.POST['q2']
         result = None
         if q1 and q2:
-            print('here')
             q1 = str(q1)
             q2 = str(q2)
             q1 = q1.split()
@@ -24,7 +23,6 @@ def check(request):
             if q1 == q2:
                 result = 1
             else:
-                print('in else')
                 negative_words = ["no","not","none","nobody","nothing","neither","never","doesn't","isn't","wasn't","shouldn't","wouldn't","won't","couldn't","won't","can't","don't","hadn't","hasn't","haven't"]
                 for word in negative_words:
                     if (word in q1 and word not in q2) or (word in q2 and word not in q1):
@@ -42,10 +40,14 @@ def check(request):
                     if(q1 == q2):
                         result = 1
                     else:
-                        num_common = sum(x==y for x,y in zip(q1,q2))
-                        if(num_common <= max(1,math.floor(min(len(q1),len(q2))/3))):
-                            result = 0
+                        q1 = set(q1)
+                        q2 = set(q2)
+                        if(len(q1.intersection(q2)) > 0):
+                            if(len(q1.intersection(q2)) < max(1,math.floor(min(len(q1),len(q2))/3))):
+                                result = 0
+                            else:
+                                result = 1
                         else:
-                            result = 1
+                            result = 0
             # result = test.main(q1,q2)
     return render(request,'result.html',{"similar":result})
