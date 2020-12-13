@@ -43,7 +43,7 @@ def check(request):
                         result = 1
                     else:
                         num_common = sum(x==y for x,y in zip(q1,q2))
-                        if(num_common < min(1,math.floor(min(len(q1),len(q2))/3))):
+                        if(num_common < max(1,math.floor(min(len(q1),len(q2))/3))):
                             result = 0
                         else:
                             result = 1
