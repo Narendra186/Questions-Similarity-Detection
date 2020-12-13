@@ -15,16 +15,19 @@ def check(request):
             print('here')
             q1 = str(q1)
             q2 = str(q2)
+            q1 = q1.split()
+            q2 = q2.split()
             q1 = [x.lower() for x in q1]
-            q2 = [x.lower() for x in q1]
-            q1 = q1.sort()
-            q2 = q2.sort()
+            q2 = [x.lower() for x in q2]
+            q1.sort()
+            q2.sort()
             if q1 == q2:
                 result = 1
             else:
+                print('in else')
                 negative_words = ["no","not","none","nobody","nothing","neither","never","doesn't","isn't","wasn't","shouldn't","wouldn't","won't","couldn't","won't","can't","don't","hadn't","hasn't","haven't"]
                 for word in negative_words:
-                    if (word in q1 and not in q2) or (word in q2 and not in q1):
+                    if (word in q1 and word not in q2) or (word in q2 and word not in q1):
                         result = 0
                         break
                 if(result != 0):
@@ -34,8 +37,8 @@ def check(request):
                             q1.remove(word)
                         if word in q2:
                             q2.remove(word)
-                    q1 = q1.sort()
-                    q2 = q2.sort()
+                    q1.sort()
+                    q2.sort()
                     if(q1 == q2):
                         result = 1
                     else:
